@@ -1,0 +1,37 @@
+
+<h2>{{title}}</h2>
+<p> Number of Memebers are <b> {{userCount}} </b> </p>
+
+<div class="container u-mar-top-m">
+  <div class="u-pad-s home-left">
+    <form action='' method="POST">
+      <input class="c-input" placeholder="first name" type="text" required='true' name="first_name"/>
+
+      <input class="c-input" placeholder="last name" type="text" required='true' name="last_name"/>
+
+      <input class="c-input" placeholder="age" type="text" required='true' name="age"/>
+
+      <input class="c-input" placeholder="email_id" type="text" required='true' name="email_id"/>
+
+      <input class="c-input" placeholder="phone_no" type="text" required='true' name="phone_no"/>
+
+      <button class="c-btn c-btn--primary" type="submit" value="Submit">Submit</button>
+
+  </form>
+</div>
+<div class="u-pad-s home-right">
+  <table class="c-table">
+    <thead>
+      <th><h2>Members Names</h2></th>
+    </thead>
+    {{#each userList}}
+    <tr>
+      <td><a href={{this.url}}>{{this.name}}</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
+<div>
+</div>

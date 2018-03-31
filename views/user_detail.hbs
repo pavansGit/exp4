@@ -1,0 +1,26 @@
+<a href="\users"><-- back</a>
+<div class="container u-mar-top-m">
+  <div class="c-modal-overlay">
+    <div class="c-modal c-modal--unibody">
+      <div class="c-modal__header o-grid">
+        <div class="o-grid__col o-grid__col--9-of-12"> <h2 class="f2">{{userDetail.name}}</h2> </div>
+        <div class="o-grid__col o-grid__col--3-of-12">
+          <div class="c-btn-group">
+          <form method="POST">
+            <form action="\delete" method="POST">
+                  <input class="c-btn c-btn--primary" type="submit" value="Delete">
+            </form>
+          </form>
+          <a href={{userDetail.urlEdit}}><button class="c-btn c-btn--primary">Edit</button></a>
+          </div>
+        </div>
+
+      </div>
+      <div class="c-modal__content">
+        <p>{{userDetail.age}}</p>
+        <p>{{userDetail.email_id}}</p>
+        <p>{{userDetail.phone_no}}</p>
+      </div>
+    </div>
+</div>
+</div>
