@@ -85,5 +85,20 @@ exports.user_detail = function(req, res, next) {
      if(err) {return next(err);}
      res.redirect(results.detail.url);
    })
+}
 
- }
+exports.user_delete_post = function(req, res, next) {
+  async.parallel({
+    detail: function(callback){
+      User.findById(req.params.id)
+      .exec(callback);
+    }
+  }, function(err, results){
+    if(err){return next(err);}
+    User.findByIdAndRemove(req.params.id, function deleteUser(err) {
+      if (err) {return next(err);}
+      //success - got to books list.
+      res.redirect('/users');
+    });
+  })
+}
